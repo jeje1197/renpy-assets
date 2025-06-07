@@ -1,6 +1,6 @@
 import tempfile
 from pathlib import Path
-from renpy_assets.commands.generate import find_files_by_patterns
+from src.renpy_assets.commands.generate import find_files_by_patterns
 
 def test_find_files_by_patterns():
     with tempfile.TemporaryDirectory() as tmpdir:

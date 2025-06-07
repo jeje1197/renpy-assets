@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 import typer
-from renpy_assets.utils.file_utilities import find_files_by_patterns
+from src.renpy_assets.utils.file_utilities import find_files_by_patterns
 
 app = typer.Typer(help="Generate RenPy asset declarations.")
 

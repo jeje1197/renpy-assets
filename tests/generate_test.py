@@ -1,5 +1,5 @@
 from pathlib import Path
-from renpy_assets.commands.generate import normalize_name, generate_declaration_line
+from src.renpy_assets.commands.generate import normalize_name, generate_declaration_line
 
 def test_normalize_name():
     root = Path("/project/game")
