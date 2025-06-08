@@ -1,5 +1,5 @@
 import typer
-from src.renpy_assets.commands import scan, generate
+from renpy_assets.commands import scan, generate
 
 
 app = typer.Typer()    

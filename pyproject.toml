@@ -20,7 +20,7 @@ dependencies = [
 sources = ["src"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["renpy_assets"]
+packages = ["src/renpy_assets"]
 
 [project.scripts]
 renpy-assets = "renpy_assets.cli:app"
