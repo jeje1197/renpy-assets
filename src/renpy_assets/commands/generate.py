@@ -1,6 +1,7 @@
+import re
 from pathlib import Path
 import typer
-from src.renpy_assets.utils.file_utilities import find_files_by_patterns
+from renpy_assets.utils.file_utilities import find_files_by_patterns
 
 app = typer.Typer(help="Generate Ren'Py declarations for assets.")
 
@@ -11,9 +12,14 @@ ASSET_TYPES = {
 }
 
 
+def sanitize_name(name: str) -> str:
+    """Sanitize a filename stem into a valid Ren'Py identifier name."""
+    return re.sub(r'\W+', '_', name).strip('_').lower()
+
+
 def generate_declaration(asset_type: str, file_path: Path, base_path: Path) -> str:
     """Create a Ren'Py declaration using relative paths based on asset type."""
-    name = file_path.stem.replace(" ", "_").lower()
+    name = sanitize_name(file_path.stem)
     rel_path = file_path.relative_to(base_path).as_posix()
 
     if asset_type == "images":

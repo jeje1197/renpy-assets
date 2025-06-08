@@ -1,5 +1,3 @@
-### CONTRIBUTING.md
-
 # Contributing to renpy-assets
 
 Thanks for your interest in contributing! 🎉

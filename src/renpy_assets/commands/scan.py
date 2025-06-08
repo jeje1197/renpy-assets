@@ -1,6 +1,6 @@
 from pathlib import Path
 import typer
-from src.renpy_assets.utils.file_utilities import find_files_by_patterns
+from renpy_assets.utils.file_utilities import find_files_by_patterns
 
 app = typer.Typer(help="Scan Ren'Py assets like images, audio, or fonts.")
 

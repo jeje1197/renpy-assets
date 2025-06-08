@@ -1,6 +1,6 @@
 from pathlib import Path
 from typer.testing import CliRunner
-from src.renpy_assets.commands.scan import app
+from renpy_assets.commands.scan import app
 
 runner = CliRunner()
 
