@@ -1,7 +1,7 @@
 import tempfile
 from pathlib import Path
 from typer.testing import CliRunner
-from renpy_assets.cli import app
+from src.renpy_assets.cli import app
 
 runner = CliRunner()
 
