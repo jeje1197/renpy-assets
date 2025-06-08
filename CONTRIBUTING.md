@@ -14,7 +14,7 @@ This project aims to provide Ren'Py developers with powerful CLI tooling for wor
 2. **Clone your fork**
 
    ```bash
-   git clone https://github.com/yourusername/renpy-assets
+   git clone https://github.com/jeje1197/renpy-assets
    cd renpy-assets
    ```
 
