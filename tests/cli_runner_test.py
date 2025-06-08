@@ -23,6 +23,10 @@ def test_generate_command():
             ]
         )
 
+        print("\nCOMMAND OUTPUT:", result.stdout)  # Add this
+        print("ERROR OUTPUT:", result.stderr)     # Add this
+        print("EXCEPTION:", result.exception)  
+
         assert result.exit_code == 0
         assert "2 declaration" in result.stdout
         assert f"Output saved to: {output_file.resolve()}" in result.stdout

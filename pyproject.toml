@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "renpy-assets"
-version = "0.1.2"
+version = "0.1.3"
 description = "CLI tool to scan and manage assets for Ren'Py visual novel projects."
 authors = [
   { name="Joseph Evans" }
@@ -16,11 +16,8 @@ dependencies = [
   "typer[all] >= 0.12.0",
 ]
 
-[tool.hatch.build]
-sources = ["src"]
-
 [tool.hatch.build.targets.wheel]
-packages = ["src/renpy_assets"]
+packages = ["renpy_assets"]
 
 [project.scripts]
 renpy-assets = "renpy_assets.cli:app"
