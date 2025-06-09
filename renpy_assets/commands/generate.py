@@ -92,7 +92,7 @@ def generate(
         typer.echo("Generating declarations...")
         for t, count in type_counts.items():
             label = t.capitalize().removesuffix("s")
-            typer.echo(f"─ {label:<15} {count} declaration{'s' if count != 1 else ''}")
+            typer.echo(f"─ {label:<10} {count} declaration{'s' if count != 1 else ''}")
 
         typer.echo(f"\nDone! Total declarations written: {sum(type_counts.values())}")
         typer.echo(f"Output saved to: {output.resolve()}")

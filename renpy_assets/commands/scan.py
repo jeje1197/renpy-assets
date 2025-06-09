@@ -7,7 +7,7 @@ app = typer.Typer(help="Scan Ren'Py assets like images, audio, or fonts.")
 
 @app.command()
 def scan(
-    asset_type: str = typer.Argument(..., help="The asset type to scan (e.g., images, audio, fonts, or all)."),
+    asset_type: str = typer.Argument(..., help="The asset type to scan (e.g., images, audio, fonts, video or all)."),
     path: Path = typer.Option("game", "--path", "-p", help="Directory to scan from")
 ):
     """
@@ -15,7 +15,7 @@ def scan(
 
     Args:
         asset_type (str): The category of assets to scan.
-            Supported values: "images", "audio", "fonts", "all".
+            Supported values: "images", "audio", "fonts", "video", "all".
         path (Path): The base directory to begin the search. Defaults to "game".
 
     Usage:
