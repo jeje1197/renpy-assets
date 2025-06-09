@@ -34,7 +34,7 @@ def generate_declaration(asset_type: str, file_path: Path, base_path: Path, use_
 
 @app.command()
 def generate(
-    asset_type: str = typer.Argument(..., help="The asset type to generate declarations for (images, audio, fonts, or all)."),
+    asset_type: str = typer.Argument(..., help="The asset type to generate declarations for (images, audio, fonts, video, or all)."),
     path: Path = typer.Option("game", "--path", "-p", help="Directory to search assets in"),
     output: Path = typer.Option("asset_declarations.rpy", "--output", "-o", help="Output file for generated declarations"),
     spaces: bool = typer.Option(False, "--spaces", "-s", help="Use spaces (instead of underscores or dashes) in image names")

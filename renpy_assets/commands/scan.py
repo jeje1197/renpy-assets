@@ -42,7 +42,7 @@ def scan(
                 typer.echo(f"  Found {len(results)} {kind} asset{'s' if len(results) != 1 else ''}:")
                 for file_path in results:
                     rel_path = file_path.relative_to(resolved_path)
-                    typer.echo(f"    • {rel_path.as_posix()}")
+                    typer.echo(f"    - {rel_path.as_posix()}")
                 typer.echo("")  # blank line after list
                 total_found += len(results)
             else:
