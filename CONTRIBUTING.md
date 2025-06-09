@@ -1,11 +1,11 @@
 # Contributing to renpy-assets
 
-Thanks for your interest in contributing! 🎉
+Thanks for your interest in contributing!
 This project aims to provide Ren'Py developers with powerful CLI tooling for working with assets.
 
 ---
 
-## 👣 How to Contribute
+## How to Contribute
 
 1. **Fork this repository**
 
@@ -23,7 +23,7 @@ This project aims to provide Ren'Py developers with powerful CLI tooling for wor
    ```
 
 4. **Make your changes**
-   Add new features or bug fixes in `src/renpy_assets`.
+   Add new features or bug fixes in `renpy_assets`.
 
 5. **Write tests**
    Add test cases under `tests/` for any new behavior.
@@ -38,7 +38,7 @@ This project aims to provide Ren'Py developers with powerful CLI tooling for wor
 
 ---
 
-## 📂 Code Structure
+## Code Structure
 
 * `cli.py` – Typer app entry point
 * `commands/` – Individual command logic (e.g. `scan`, `generate`)
@@ -47,7 +47,7 @@ This project aims to provide Ren'Py developers with powerful CLI tooling for wor
 
 ---
 
-## 🧼 Code Style
+## Code Style
 
 * Use `black` for formatting
 * Use `pytest` for all testing
@@ -55,7 +55,7 @@ This project aims to provide Ren'Py developers with powerful CLI tooling for wor
 
 ---
 
-## 💡 Ideas to Contribute
+## Ideas to Contribute
 
 * Add support for other Ren'Py assets (movies, live2D, etc)
 * Autogenerate label or character definitions

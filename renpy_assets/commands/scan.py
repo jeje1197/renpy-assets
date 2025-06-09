@@ -1,14 +1,9 @@
 from pathlib import Path
 import typer
 from renpy_assets.utils.file_utilities import find_files_by_patterns
+from renpy_assets.utils.constants import ASSET_TYPES
 
 app = typer.Typer(help="Scan Ren'Py assets like images, audio, or fonts.")
-
-ASSET_TYPES = {
-    "images": [r"\.png$", r"\.jpg$", r"\.jpeg$", r"\.webp$"],
-    "audio": [r"\.ogg$", r"\.mp3$", r"\.wav$"],
-    "fonts": [r"\.ttf$", r"\.otf$"],
-}
 
 @app.command()
 def scan(
@@ -36,12 +31,12 @@ def scan(
         raise typer.Exit(code=1)
 
     resolved_path = path.resolve()
-    typer.echo(f"\n🔍 Scanning assets in: {resolved_path}\n")
+    typer.echo(f"\nScanning assets in: {resolved_path}\n")
 
     if asset_type == "all":
         total_found = 0
         for kind, patterns in ASSET_TYPES.items():
-            typer.echo(f"📂 {kind.capitalize()} Assets")
+            typer.echo(f"{kind.capitalize()} Assets")
             results = find_files_by_patterns(str(resolved_path), patterns)
             if results:
                 typer.echo(f"  Found {len(results)} {kind} asset{'s' if len(results) != 1 else ''}:")
@@ -52,15 +47,15 @@ def scan(
                 total_found += len(results)
             else:
                 typer.echo(f"  No {kind} assets found.\n")
-        typer.echo(f"✅ Total assets found: {total_found}")
+        typer.echo(f"Total assets found: {total_found}")
     else:
         patterns = ASSET_TYPES[asset_type]
         results = find_files_by_patterns(str(resolved_path), patterns)
-        typer.echo(f"📂 {asset_type.capitalize()} Assets")
+        typer.echo(f"{asset_type.capitalize()} Assets")
         if results:
             typer.echo(f"  Found {len(results)} {asset_type} asset{'s' if len(results) != 1 else ''}:")
             for file_path in results:
                 rel_path = file_path.relative_to(resolved_path)
-                typer.echo(f"    • {rel_path.as_posix()}")
+                typer.echo(f"    - {rel_path.as_posix()}")
         else:
             typer.echo("  No matching assets found.")

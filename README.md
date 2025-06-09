@@ -6,9 +6,9 @@ Easily scan your project for images, audio, and font assets, and generate boiler
 
 ---
 
-## ✨ Features
+## Features
 
-### 🔍 Scan Assets
+### Scan Assets
 
 Identify all assets in your Ren'Py project based on type:
 
@@ -28,7 +28,7 @@ This prints a nicely formatted list of found assets, organized by category.
 
 ---
 
-### 🪄 Generate Declarations
+### Generate Declarations
 
 Automatically generate Ren'Py declarations for your assets:
 
@@ -52,11 +52,22 @@ define audio.button_click = "audio/ui/click.ogg"
 define inter_font = "fonts/Inter-Regular.ttf"
 ```
 
-Output filenames and directories are customizable via the `--output` and `--path` flags.
+You can optionally use the `--spaces` flag to replace underscores and dashes in image names with spaces:
+
+```bash
+renpy-assets generate images --path game/images --output image_decls.rpy --spaces
+```
+
+Which outputs:
+
+```renpy
+image bg room = "images/bg room.png"
+image character happy = "images/character happy.png"
+```
 
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 pip install renpy-assets
@@ -72,24 +83,24 @@ pip install -e .
 
 ---
 
-## 📁 Project Layout
+## Project Layout
 
 ```
-src/
-  renpy_assets/
-    cli.py
-    commands/
-      scan.py
-      generate.py
-    utils/
-      file_utilities.py
+renpy_assets/
+  cli.py
+  commands/
+    scan.py
+    generate.py
+  utils/
+    file_utilities.py
+    constants.py
 
 tests/
 ```
 
 ---
 
-## 🧪 Testing
+## Testing
 
 Run all tests using:
 
@@ -97,10 +108,10 @@ Run all tests using:
 pytest
 ```
 
-Make sure you're in the root directory and `src` is on the Python path.
+Make sure you're in the root directory and `renpy_assets` is on the Python path.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for how to get involved.

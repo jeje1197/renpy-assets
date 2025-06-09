@@ -29,6 +29,23 @@ def test_generate_images(tmp_path):
     assert "Total declarations written: 2" in result.stdout
 
 
+def test_generate_images_with_spaces(tmp_path):
+    setup_test_files(tmp_path, ["images/bg/scene_1.png", "images/sprite.webp"])
+    output_file = tmp_path / "images_spaces.rpy"
+
+    result = runner.invoke(app, [
+        "images", "--path", str(tmp_path), "--output", str(output_file), "--spaces"
+    ])
+
+    assert result.exit_code == 0
+    assert output_file.exists()
+
+    content = output_file.read_text()
+    assert "# --- Image Assets ---" in content
+    assert 'image scene 1 = "images/bg/scene_1.png"' in content
+    assert 'image sprite = "images/sprite.webp"' in content
+
+
 def test_generate_audio(tmp_path):
     setup_test_files(tmp_path, ["audio/music/theme.ogg", "audio/sfx/click.mp3"])
     output_file = tmp_path / "audio_decls.rpy"
